@@ -1,0 +1,24 @@
+/*
+    O(n) + O(n log n) + O(n) = O(n log n)
+    Time Complexity: O(n log n)
+    Space Complexity: O(n)
+*/
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        s = s.toLowerCase();
+        t = t.toLowerCase();
+        if(s.length() != t.length()){
+            return false;
+        }
+
+        char[] array1 = s.toCharArray();
+        char[] array2 = t.toCharArray();
+
+        Arrays.sort(array1);
+        Arrays.sort(array2);
+
+        return Arrays.equals(array1, array2);
+
+    }
+}
